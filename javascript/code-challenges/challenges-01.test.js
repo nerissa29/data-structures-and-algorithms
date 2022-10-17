@@ -8,7 +8,7 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => {
+const addOne = arr => {
   // creating array that will hold new values
   let newArr = [];
 
@@ -25,7 +25,7 @@ Write a function named `addExclamation` that takes an array of strings, and retu
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
-const addExclamation = (arr) => {
+const addExclamation = arr => {
   // creating array that will hold new values
   let newArr = [];
   // using forEach to loop over the input array
@@ -41,7 +41,7 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
 
-const allUpperCase = (arr) => {
+const allUpperCase = arr => {
   // creating array that will hold new values
   let newArr = [];
   // using forEach to loop over the input array
@@ -59,12 +59,17 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
-const greeting = (word) => {
-  // Solution code here...
-};
+const greeting = word => word.toUpperCase() + '!';
+
 
 const speaker = (words, callback) => {
-  // Solution code here...
+  // an array that will hold new values
+  let newArr = [];
+  // using forEach to loop over the input array
+  words.forEach(element => {
+    newArr.push(callback(element));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

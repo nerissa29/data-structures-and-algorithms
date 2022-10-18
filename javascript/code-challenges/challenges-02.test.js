@@ -126,7 +126,7 @@ For example: charCode(['h','i']) returns [104, 105].
 // expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
 
 // used String.charCodeAt() from MDN docs
-// uses Math.pow from MDN docs
+// uses map from MDN docs
 const charCode = (arr) => {
   // declaring a variable that will hold the new array values
   let newArr = arr.map(element => {
@@ -147,7 +147,7 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 // expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
 
-// uses Math.pow from MDN docs
+// uses map from MDN docs
 const evenOdd = (arr) => {
   // declaring a variable that will hold the new array values
   let newArr = arr.map(element => {
@@ -172,6 +172,9 @@ Write a function named extractAbilities that, given the array of abilities, uses
 Note: Because this function is expecting the array of abilities, it will be invoked as:
 extractAbilities(snorlaxAbilities.abilities)
 ------------------------------------------------------------------------------------------------ */
+
+// expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual(['gluttony', 'cute charm', 'immunity']);
+
 
 const snorlaxAbilities = {
   abilities: [
@@ -205,7 +208,11 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  // declaring a variable that will hold the new array values
+  let newArr = arr.map(element => {
+    return element.ability.name;
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -251,8 +258,21 @@ const snorlaxStats = {
   weight: 4600,
 };
 
+
+
+/* expect(extractStats(snorlaxStats.stats)).toStrictEqual([
+  { name: 'speed', total: 35, },
+  { name: 'special-defense', total: 112, },
+  { name: 'special-attack', total: 74, },
+]); */
+
+
 const extractStats = (arr) => {
-  // Solution code here...
+  // declaring a variable that will hold the new array values
+  let newArr = arr.map(element => {
+    return [element.stat.name, (element.effort + element.baseStat)];
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -346,14 +366,14 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an array containing only the ability names', () => {
     expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual(['gluttony', 'cute charm', 'immunity']);
     expect(extractAbilities(snorlaxAbilities.abilities).length).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },

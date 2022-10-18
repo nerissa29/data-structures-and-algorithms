@@ -122,8 +122,15 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
+// expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
+
+// used String.charCodeAt() from MDN docs
 const charCode = (arr) => {
-  // Solution code here...
+  // declaring a variable that will hold the new array values
+  let newArr = arr.map(element => {
+    return element.charCodeAt();
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -295,7 +302,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);

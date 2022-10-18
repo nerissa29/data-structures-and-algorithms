@@ -69,6 +69,7 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
 
+// uses Math.pow from MDN docs
 const forLoopTwoToThe = (arr) => {
   // declaring a variable that will hold the new values from map()
   let newArr = [];
@@ -85,8 +86,16 @@ CHALLENGE 5
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
+// expect(forEachTwoToThe([-1, -2, -3])).toStrictEqual([0.5, 0.25, 0.125]);
+
+// uses Math.pow from MDN docs
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  // declaring empty array that will hold the new array values
+  let newArr = [];
+  arr.forEach(element => {
+    newArr.push(Math.pow(2, element));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,7 +105,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  // declaring a variable that will hold the new array values
+  let newArr = arr.map(element => {
+    return Math.pow(2, element);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

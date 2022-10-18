@@ -13,9 +13,7 @@ const raisedToTheThird = (arr) => {
   // creating an empty array to hold new values
   let newArr = [];
   // using forEach to loop over each elements
-  arr.forEach(element => {
-    newArr.push(Math.pow(element, 3));
-  });
+  arr.forEach(element => newArr.push(Math.pow(element, 3)));
   return newArr;
 };
 
@@ -25,8 +23,13 @@ CHALLENGE 2
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
+// used map from MDN docs
 const addOne = (arr) => {
-  // Solution code here...
+  // declaring a variable that will hold the new values from map()
+  let newArr = arr.map(element => {
+    return element + 1;
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

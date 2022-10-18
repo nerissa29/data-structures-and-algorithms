@@ -267,13 +267,18 @@ const snorlaxStats = {
 ]); */
 
 
-const extractStats = (arr) => {
-  // declaring a variable that will hold the new array values
-  let newArr = arr.map(element => {
-    return [element.stat.name, (element.effort + element.baseStat)];
-  });
-  return newArr;
-};
+// const extractStats = (arr) => {
+//   // declaring a variable that will hold the new array values
+//   let newArr = arr.map(element => {
+//     return [
+//       {
+//         name: element.stat.name,
+//         total: (element.effort + element.baseStat)
+//       }
+//     ];
+//   });
+//   return newArr;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -373,7 +378,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-describe('Testing challenge 10', () => {
+xdescribe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },

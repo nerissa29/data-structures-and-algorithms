@@ -104,6 +104,7 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
+// uses Math.pow from MDN docs
 const mapTwoToThe = (arr) => {
   // declaring a variable that will hold the new array values
   let newArr = arr.map(element => {
@@ -125,6 +126,7 @@ For example: charCode(['h','i']) returns [104, 105].
 // expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
 
 // used String.charCodeAt() from MDN docs
+// uses Math.pow from MDN docs
 const charCode = (arr) => {
   // declaring a variable that will hold the new array values
   let newArr = arr.map(element => {
@@ -143,8 +145,21 @@ If any element in the array is not a number, the resulting array should have the
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
+// expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
+
+// uses Math.pow from MDN docs
 const evenOdd = (arr) => {
-  // Solution code here...
+  // declaring a variable that will hold the new array values
+  let newArr = arr.map(element => {
+    if (typeof element !== 'number') return 'N/A';
+    else if (element % 2 === 0) return 'even';
+    else if (element % 2 !== 0) return 'odd';
+
+    /* >>> the odd is reading first before getting to this line <<< */
+    // else if (typeof element !== 'number') return 'N/A';
+
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -309,7 +324,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);

@@ -10,12 +10,16 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 // used Math.pow from MDN docs
 const raisedToTheThird = (arr) => {
-  // creating an empty array to hold new values
+  // declaring a variable that will hold the new values from map()
   let newArr = [];
-  // using forEach to loop over each elements
-  arr.forEach(element => newArr.push(Math.pow(element, 3)));
+  // using forEach to loop over each array elements
+  arr.forEach(element => {
+    return newArr.push(Math.pow(element, 3));
+  });
   return newArr;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -32,6 +36,7 @@ const addOne = (arr) => {
   return newArr;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -40,10 +45,19 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 // used map from MDN docs
 const addQuestion = (arr) => {
-  // declaring a variable that will hold the new values from map()
+  // assigning a variable that will hold the new values from map()
   let newArr = arr.map(element => element + '?');
   return newArr;
 };
+
+
+/* >>> another way <<< */
+
+// const addQuestion = (arr) => {
+//   // declaring a variable that will hold the new values from map()
+//   return arr.map(element => element + '?');
+// };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -56,7 +70,13 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  // declaring a variable that will hold the new values from map()
+  let newArr = [];
+  // using for loop to iterate through each array values
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(Math.pow(2, arr[i]));
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -121,9 +121,23 @@ const createList = (availableItems) => {
   // an object that will hold available items
   let newItems = [];
   // using forEach to loop over the array
-  availableItems.forEach(function(items) {
-    if (items.available === 'true') newItems.push(items);
+
+  // didn't work
+  // availableItems.forEach(function(items) {
+  //   if (items.available === 'true') newItems.push(items);
+  // });
+
+  // availableItems.forEach(index => {
+  //   if (index.available) newItems.push(index.name);
+  // });
+
+  // collaborate with TA Garfield
+  availableItems.forEach(element => {
+    if (element.available) newItems.push(element.name);
   });
+
+  return newItems;
+
 };
 
 /* ------------------------------------------------------------------------------------------------

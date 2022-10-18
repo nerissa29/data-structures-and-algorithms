@@ -38,8 +38,11 @@ CHALLENGE 3
 Write a function named addQuestion that, given an array of strings, uses map to return a new array containing each string followed by a question mark character.
 ------------------------------------------------------------------------------------------------ */
 
+// used map from MDN docs
 const addQuestion = (arr) => {
-  // Solution code here...
+  // declaring a variable that will hold the new values from map()
+  let newArr = arr.map(element => element + '?');
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

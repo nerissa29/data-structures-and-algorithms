@@ -71,8 +71,23 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  // using filter() to return new resulting array
+  let newArr = arr.filter(element => {
+    if (!forbiddenValues.includes(element)) return element;
+  });
+  return newArr;
 };
+
+// const notInFirstArray = (forbiddenValues, arr) => {
+//   let arrConcat = [...forbiddenValues, ...arr];
+//   // using filter() to return new resulting array
+//   let newArr = arrConcat.filter(element => {
+//     let arrNotIncluded = [];
+//     if (!arrNotIncluded.includes(element)) arrNotIncluded.push(element);
+//     return arrNotIncluded;
+//   });
+//   return newArr;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal

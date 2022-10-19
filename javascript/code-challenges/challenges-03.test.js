@@ -24,8 +24,13 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
+// used .filter() from MDN docs
 const typeNum = (arr) => {
-  // Solution code here...
+  // using filter() to return new resulting array
+  let newArr = arr.filter(element => {
+    if (typeof element === 'number') return element;
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -56,7 +56,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  // using filter() to return new resulting array
+  let newArr = arr.filter(oddNum => oddNum % 2 !== 0);
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------

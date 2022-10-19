@@ -42,7 +42,9 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  // using filter() to return new resulting array
+  let newArr = arr.filter(element => element.includes('and'));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

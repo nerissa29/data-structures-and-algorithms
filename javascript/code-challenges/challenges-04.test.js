@@ -189,7 +189,6 @@ const people = [
 // MDN Docs - sort()
 const sortPeople = (arr) => {
   // using sort() to sort values
-  // return arr.sort((a, b) => a.lastName - b.lastName);
   return arr.sort((a, b) => {
     if (a.lastName > b.lastName) return 1;
     if (a.lastName < b.lastName) return -1;
@@ -207,8 +206,17 @@ If two people share the same last name, alphabetize on their first name.
 If two people have the same full name, the younger one should come first. Do not worry about capitalization.
 ------------------------------------------------------------------------------------------------ */
 
+// MDN Docs - sort()
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  // using sort() to sort values
+  return arr.sort((a, b) => {
+    if (a.lastName === b.lastName) {
+      if (a.firstName > b.firstName) return 1;
+      if (a.firstName < b.firstName) return -1;
+    }
+    if (a.lastName > b.lastName) return 1;
+    if (a.lastName < b.lastName) return -1;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------

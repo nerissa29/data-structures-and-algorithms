@@ -58,8 +58,11 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
+// MDN Docs - sort()
 const sortNumbers = (arr) => {
-  // Solution code here...
+  // using sort() to sort values
+  return arr.sort((a , b) => a - b);
+
 };
 
 /* ------------------------------------------------------------------------------------------------

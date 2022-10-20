@@ -44,8 +44,10 @@ Write a function called sortNames that takes an array of names and sorts them al
 For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
+// MDN Docs - sort()
 const sortNames = (arr) => {
-  // Solution code here...
+  // using sort() to sort values
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------

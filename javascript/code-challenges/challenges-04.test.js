@@ -73,8 +73,10 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
+// MDN Docs - sort()
 const sortBackwards = (arr) => {
-  // Solution code here...
+  // using sort() to sort values
+  return arr.sort((a, b) => b - a);
 };
 
 /* ------------------------------------------------------------------------------------------------

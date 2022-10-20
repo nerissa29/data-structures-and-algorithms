@@ -164,6 +164,15 @@ CHALLENGE 10 - Stretch Goal
 Write a function named sortPeople that takes in an array of Person objects, each of which has firstName, lastName, and age properties, and sorts those people by their last names. Do not worry about capitalization or first names.
 ------------------------------------------------------------------------------------------------ */
 
+/*
+    expect(sortPeople(people)).toStrictEqual([
+      new Person('Casey', 'Codefellow', 38),
+      new Person('Stan', 'Seattle', 67),
+      new Person('Wes', 'Washington', 25),
+    ]);
+*/
+
+
 function Person(firstName, lastName, age) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -176,9 +185,17 @@ const people = [
   new Person('Stan', 'Seattle', 67),
 ];
 
+
+// MDN Docs - sort()
 const sortPeople = (arr) => {
-  // Solution code here...
+  // using sort() to sort values
+  // return arr.sort((a, b) => a.lastName - b.lastName);
+  return arr.sort((a, b) => {
+    if (a.lastName > b.lastName) return 1;
+    if (a.lastName < b.lastName) return -1;
+  });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
@@ -332,7 +349,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should sort people by their last names', () => {
     expect(sortPeople(people)).toStrictEqual([
       new Person('Casey', 'Codefellow', 38),

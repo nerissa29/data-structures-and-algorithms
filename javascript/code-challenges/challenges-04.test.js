@@ -123,8 +123,13 @@ Write a function named alphabetizeBetter that takes in an array of strings and r
 For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
+// MDN Docs - sort()
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  // using sort() to sort values
+  return arr.sort((a, b) => {
+    if (a.toLowerCase() > b.toLowerCase()) return 1;
+    if (a.toLowerCase() < b.toLowerCase()) return -1;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -295,7 +300,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual(['alert', 'Alice', 'apple', 'Average']);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);

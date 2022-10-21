@@ -48,8 +48,14 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
+// reduce() from MDN Docs
 const addPurchases = (arr) => {
-  // Solution code here...
+  // using reduce() to iterate through the array values
+  let totalPrice = arr.reduce((total, curVal) => {
+    total = total + curVal.purchasePrice;
+    return total;
+  }, 0);
+  return totalPrice;
 };
 
 /* ------------------------------------------------------------------------------------------------

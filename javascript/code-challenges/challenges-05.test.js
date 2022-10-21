@@ -11,6 +11,8 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
+
+// map() from MDN Docs
 const toLastNames = people => {
   // using map() to iterate through the array elements
   let name = people.map(element => `${element.firstName} ${element.lastName}`);
@@ -24,8 +26,14 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
+// reduce() from MDN Docs
 const addValues = (arr) => {
-  // Solution code here...
+  // using reduce() to iterate through the array values
+  let numArr = arr.reduce((total, curVal) => {
+    total = total + curVal;
+    return total;
+  }, 0);
+  return numArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

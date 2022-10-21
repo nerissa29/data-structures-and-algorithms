@@ -1,5 +1,7 @@
 'use strict';
 
+const { index } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -66,9 +68,28 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
+
+// >>> countNumberOfElements([1, 2, 3, 4, 5]) <<<
+
+// reduce() from MDN Docs
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  // using reduce() to iterate through the array values
+  let numOfElements = arr.reduce((arrLength) => arrLength + 1, 0);
+  return numOfElements;
 };
+
+
+// >>>>>>> more lines, works same <<<<<<<
+
+// reduce() from MDN Docs
+// const countNumberOfElements = (arr) => {
+//   // using reduce() to iterate through the array values
+//   let numOfElements = arr.reduce((arrLength) => {
+//     arrLength = arrLength + 1;
+//     return arrLength;
+//   }, 0);
+//   return numOfElements;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5

@@ -1,6 +1,6 @@
 'use strict';
 
-const { index } = require("cheerio/lib/api/traversing");
+// const { index } = require("cheerio/lib/api/traversing");   >>>> what's this??
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
@@ -147,8 +147,30 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+
+/* expect(returnNames(starWarsData)).toStrictEqual([ 'Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa' ]); */
+
+
+// reduce() from MDN Docs
 const returnNames = (arr) => {
-  // Solution code here...
+  // using reduce() to iterate through the array values
+  let newArr = arr.reduce((names, curName) => {
+    let arrName = [];
+    // names = names + curName.name;
+    // return arrName.push(names);
+
+    if (arr.length !== arr[arr.length - 1]) {
+      names = names + curName.name + ', ';
+      arrName.push(names)
+    }
+
+    // for (let i = 0; i < arr.length; i++) {
+    //   names = names + curName.name + ', ';
+    //   arrName.push(names);
+    // }
+    return arrName;
+  }, '');
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,8 +181,11 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
+// reduce() from MDN Docs
 const reversedString = (str) => {
-  // Solution code here...
+  // using reduce() to iterate through the array values
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------

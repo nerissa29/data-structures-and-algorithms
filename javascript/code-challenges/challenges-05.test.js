@@ -153,23 +153,10 @@ let starWarsData = [{
 
 // reduce() from MDN Docs
 const returnNames = (arr) => {
-  // using reduce() to iterate through the array values
   let newArr = arr.reduce((names, curName) => {
-    let arrName = [];
-    // names = names + curName.name;
-    // return arrName.push(names);
-
-    if (arr.length !== arr[arr.length - 1]) {
-      names = names + curName.name + ', ';
-      arrName.push(names)
-    }
-
-    // for (let i = 0; i < arr.length; i++) {
-    //   names = names + curName.name + ', ';
-    //   arrName.push(names);
-    // }
-    return arrName;
-  }, '');
+    if (curName.name) names.push(curName.name);
+    return names;
+  }, []);
   return newArr;
 };
 

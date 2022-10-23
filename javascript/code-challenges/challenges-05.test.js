@@ -168,11 +168,18 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
+
+// expect(reversedString('Code 301')).toStrictEqual('103 edoC');
+
+
 // reduce() from MDN Docs
 const reversedString = (str) => {
   // using reduce() to iterate through the array values
-
-
+  let newStr = str.reduce((reverseWord, letter), => ''}{
+    reverseWord = letter + reverseWord;
+    return reverseWord;
+  });
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -174,11 +174,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 // reduce() from MDN Docs
 const reversedString = (str) => {
+  // create an array and assigned it the split value of string
+  const arr = str.split('');
   // using reduce() to iterate through the array values
-  let newStr = str.reduce((reverseWord, letter), => ''}{
-    reverseWord = letter + reverseWord;
-    return reverseWord;
-  });
+  let newStr = arr.reduce((reverseWord, letter) => {
+    return letter + reverseWord;
+  }, '');
   return newStr;
 };
 

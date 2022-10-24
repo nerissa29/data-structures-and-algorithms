@@ -254,12 +254,15 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 // reduce() from MDN Docs
 const calculateAverage = (arr) => {
+  // declare variable that will hold the avergae value
+  let avg = 0;
   // using reduce() to iterate through the array values
-  let childrenNum = arr.reduce((total, curNum) => {
-    if (curNum.children) total = total + curNum.children.length;
-    return total;
+  let average = arr.reduce((sum, count) => {
+    sum = sum + count;
+    return sum;
   }, 0);
-  return childrenNum;
+  avg = (Math.floor(average / arr.length));
+  return Math.floor(avg);
 };
 
 /* ------------------------------------------------------------------------------------------------

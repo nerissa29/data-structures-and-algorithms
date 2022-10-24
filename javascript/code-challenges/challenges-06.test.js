@@ -104,8 +104,9 @@ setStatusAsAuthor(people);
 console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
+// uses map() from MDN Docs
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  // uses map to iterate and add new property to each obj..
   people.map(element => element.isAuthor = true);
   console.log(people);
 };
@@ -127,6 +128,22 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   // Solution code here...
+  // const array1 = arr1.join(arr2);
+  // console.log(array1);
+
+  // let array1 = [...arr1,...arr2];
+  // console.log('array1: ', array1);
+
+  arr1 = [...arr1,...arr2];
+  // [
+  //   1, 2, 3, 4,
+  //   5, 6, 7, 8
+  // ]
+  console.log('arr1: ', arr1);
+
+
+  console.log('arr2: ', arr2);
+
 
 };
 
@@ -187,7 +204,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-describe('Testing challenge 6', () => {
+xdescribe('Testing challenge 6', () => {
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];

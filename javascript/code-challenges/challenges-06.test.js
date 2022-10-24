@@ -67,7 +67,7 @@ console.log(a) prints [1, 2, 3, 1]
 const appendFirstToLast = (arr) => {
   // assigning/adding the array index 0 to the end of the array
   arr[arr.length] = arr[0];
-  return arr;
+  console.log(arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +86,9 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+  // adding yearBorn property to obj, and assigning it the argument year
+  obj.yearBorn = year;
+  console.log(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------

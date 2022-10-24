@@ -273,6 +273,11 @@ Write a function named countPrimeNumbers that, given an array elements as input,
 You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
 
+
+
+// countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
+
+
 const isPrime = (value) => {
   for (let i = 2; i < value; i++) {
     if (value % i === 0) {
@@ -282,8 +287,15 @@ const isPrime = (value) => {
   return value > 1;
 };
 
+
+// reduce() from MDN Docs
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  // using reduce() to iterate through the array values
+  let primeCount = arr.reduce((count, curNum) => {
+    if (isPrime(curNum)) count++;
+    return count;
+  }, 0);
+  return primeCount;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -415,13 +427,13 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);

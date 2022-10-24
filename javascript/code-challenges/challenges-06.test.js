@@ -65,7 +65,9 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  // assigning/adding the array index 0 to the end of the array
+  arr[arr.length] = arr[0];
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------

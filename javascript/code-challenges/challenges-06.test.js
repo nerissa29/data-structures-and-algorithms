@@ -37,8 +37,18 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 ------------------------------------------------------------------------------------------------ */
 
+
+
+// expect(a).toStrictEqual('This is my story.');
+// expect(b).toStrictEqual('This is my story. The end.');
+
 const appendTheEnd = (str) => {
-  // Solution code here...
+  // declaring a variable that wil hold the original string input
+  let origStr = str;
+  // declaring a new variable and assigning it the value of origStr
+  let newStr = origStr + ' The end.';
+  return newStr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------

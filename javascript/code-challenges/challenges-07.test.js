@@ -93,8 +93,9 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
+// used MDN split()
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  // used split('') to split each character
   return arr.split('');
 
 };
@@ -141,9 +142,14 @@ const gruffaloCrumble = {
 };
 
 
+// expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
+
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.forEach(element => {
+    result.push(element.ingredients.slice(0,2));
+  });
   return result;
 };
 

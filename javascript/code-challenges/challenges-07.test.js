@@ -37,8 +37,14 @@ CHALLENGE 2
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index.
 ------------------------------------------------------------------------------------------------ */
 
+
+// expect(removeThree(2, [1, 2, 3, 4, 5, 6, 7, 8])).toStrictEqual([1, 2, 6, 7, 8]);
+
+// used splice() from MDN
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  // used splice to remove 3 array elements starting at the given idx
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,8 +53,13 @@ CHALLENGE 3
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
+
+// expect(joinArray(['hello', '301', 'students'])).toStrictEqual('hello 301 students');
+
+// used MDN join()
 const joinArray = (arr) => {
-  // Solution code here...
+  // used join() to join array elements together separated by ' '
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------

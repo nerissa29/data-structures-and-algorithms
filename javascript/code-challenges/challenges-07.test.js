@@ -75,9 +75,13 @@ For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
+
+// expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
+
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+
   return result;
 };
 
@@ -91,6 +95,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
+
 };
 
 

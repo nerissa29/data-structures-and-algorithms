@@ -101,8 +101,11 @@ Write a function named containsWorld that takes in a string or number of any len
 
 ------------------------------------------------------------------------------------------------ */
 
+// used regex101.com
 const containsWorld = (input) => {
-  // Solution code here...
+  // declaring a variable that holds the regex pattern
+  let regexPattern = /world/g;
+  return regexPattern.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------

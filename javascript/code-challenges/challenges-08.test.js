@@ -116,8 +116,11 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
+// used regex101.com
 const isCapitalized = (str) => {
-  // Solution code here...
+// declaring a variable that holds the regex pattern
+  let regexPattern = /^[[:upper:]]/;
+  return str.match(regexPattern);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,8 +129,12 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
+// used regex101.com
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  // declaring a variable that holds the regex pattern
+  let regexPattern = /\w*^[A-J]\w*/g;
+  return arr.match(regexPattern);
+
 };
 
 /* ------------------------------------------------------------------------------------------------

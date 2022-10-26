@@ -68,6 +68,7 @@ Write a function named containsW that takes in a string. This function should us
 
 ------------------------------------------------------------------------------------------------ */
 
+// used regex101.com
 const containsW = (str) => {
   // declaring a variable that holds the regex pattern
   let regexPattern = /w/g;
@@ -86,8 +87,11 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
+// used regex101.com
 const isNum = (input) => {
-  // Solution code here...
+  // declaring a variable that holds the regex pattern
+  let regexPattern = /\d/g;
+  return regexPattern.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------

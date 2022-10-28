@@ -29,8 +29,10 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true
 };
 
+// Object.keys() from MDN
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  // used Object.keys to get the object keys
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,8 +43,13 @@ Write a function named checkValues that takes in an object and a value and retur
 
 ------------------------------------------------------------------------------------------------ */
 
+
+// expect(checkValues({ class: '301' }, '401')).toBe(false);
+
 const checkValues = (obj, value) => {
-  // Solution code here...
+  // Object.values() and .includes from MDN
+  return Object.values(obj).includes(value);
+
 };
 
 /* ------------------------------------------------------------------------------------------------

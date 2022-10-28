@@ -75,9 +75,14 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
-  let entries = [];
-  // entries.push(Object.entries(obj));
-  return entries.push(Object.entries(obj));
+  // let keys = Object.keys(obj);
+  // let values = Object.values(obj);
+  let newArr = [];
+
+  for (let [key, value] of Object.entries(obj)) {
+    newArr.push(`${key}: ${value}`);
+  }
+  return newArr;
 };
 
 
@@ -138,8 +143,10 @@ const characters = [
 // expect(getHouses(characters)[0]).toStrictEqual('Stark');
 // expect(getHouses(characters).length).toStrictEqual(7);
 
+// map() from MDN
 const getHouses = (arr) => {
-  arr.map(el => Object.values(el.house));
+  // an array, can use array built-in methods to iterate through the array elements
+  return arr.map(element => element.house);
 };
 
 /*------------------------------------------------------------------------------------------------

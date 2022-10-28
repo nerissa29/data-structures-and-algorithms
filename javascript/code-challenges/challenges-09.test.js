@@ -138,8 +138,10 @@ const characters = [
 // expect(getHouses(characters)[0]).toStrictEqual('Stark');
 // expect(getHouses(characters).length).toStrictEqual(7);
 
+// map() from MDN
 const getHouses = (arr) => {
-  arr.map(el => Object.values(el.house));
+  // an array, can use array built-in methods to iterate through the array elements
+  return arr.map(element => element.house);
 };
 
 /*------------------------------------------------------------------------------------------------

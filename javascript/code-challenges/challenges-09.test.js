@@ -71,8 +71,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
+// expect(updateNumbers(startingObj).includes('Grace Hopper: 222-303-5938')).toBe(true)
+
 const updateNumbers = (obj) => {
   // Solution code here...
+  let entries = [];
+  // entries.push(Object.entries(obj));
+  return entries.push(Object.entries(obj));
 };
 
 
@@ -82,6 +87,9 @@ CHALLENGE 5
 
 Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
 ------------------------------------------------------------------------------------------------ */
+
+// expect(getHouses(characters)[0]).toStrictEqual('Stark');
+// expect(getHouses(characters).length).toStrictEqual(7);
 
 const characters = [
   {
@@ -126,10 +134,12 @@ const characters = [
   },
 ];
 
+
+// expect(getHouses(characters)[0]).toStrictEqual('Stark');
+// expect(getHouses(characters).length).toStrictEqual(7);
+
 const getHouses = (arr) => {
-  let houses = [];
-  // Solution code here...
-  return houses;
+  arr.map(el => Object.values(el.house));
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -146,7 +156,9 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  if (arr.name === character) {
+    if (Object.values(arr.children)) return true;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------

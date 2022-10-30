@@ -181,13 +181,31 @@ const errands = [
   },
   {
     store: 'Pet store',
-    items: [{ name: 'Cans of food', quantity: 8 }, { name: 'Treats', quantity: 24 }, { name: 'Leash', quantity: 1 }]
+    items: [
+      { name: 'Cans of food', quantity: 8 },
+      { name: 'Treats', quantity: 24 },
+      { name: 'Leash', quantity: 1}
+    ]
   }
 ];
 
+
+
+// expect(howManyTreats(errands)).toStrictEqual(24);
+
+// forEach() from MDN
 const howManyTreats = (arr) => {
   // Solution code here...
+  // let quantityOfTreats = arr.forEach((element) => {
+  //   if (element.name === 'Pet store') {
+  //     Object.keys(arr).forEach((key, idx) => {
+  //       if (key.items.name === 'Treats') return key.items.quantity;
+  //     });
+  //   }
+  // });
+  // return quantityOfTreats;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

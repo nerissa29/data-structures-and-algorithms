@@ -64,7 +64,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+
+  // why is this not passing?? tried in codepen, it's giving right values!  --- it wants to pass initial value 0
+  let total = matrix.flat().reduce((acc, curVal) => {
+    return acc + curVal;
+  }, 0);
+  console.log(total);
+  return total;
 };
 
 

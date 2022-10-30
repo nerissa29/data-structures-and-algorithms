@@ -97,8 +97,21 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  // declaring a variable that will hold sum for per hour
+  let cookiePerHour = [];
+  // basing the length on the first index (all index has length of 12)
+  for (let i = 0; i < stores[0].length; i++) {
+    let totalPerHour = 0;
+    for (let j = 0; j < stores.length; j++) {
+      // adding values of j at index i
+      totalPerHour += stores[j][i];
+    }
+    // adding the value into the array
+    cookiePerHour.push(totalPerHour);
 
+  }
+  console.log(cookiePerHour);
+  return cookiePerHour;
 };
 
 /* ------------------------------------------------------------------------------------------------

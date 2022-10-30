@@ -11,7 +11,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 // expect(returnTen('hello world')).toStrictEqual(['e','l','l','o',' ','w','o','r','l','d']);
 // expect(returnTen('world')).toStrictEqual(['w','o','r','l','d']);
 
-
+// split() and splice() from MDN
 function returnTen(str){
   // Solution code here...
   let newStr = str.split('');
@@ -37,7 +37,16 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  // declare a variable that will hold max values
+  let maxVal = 0;
+  // looping through nested arrays
+  for (let i in matrix) {
+    for (let j in matrix) {
+      if (matrix[j][i] > maxVal) maxVal = matrix[j][i];
+    }
+  }
+  console.log(maxVal);
+  return maxVal;
 };
 
 /* ------------------------------------------------------------------------------------------------

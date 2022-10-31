@@ -81,6 +81,15 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  result.push(str);
+
+  for (let i = 0; i <= str.length; i++) {
+    let slicedStr = str.slice(1);
+    result.push(slicedStr);
+    str = slicedStr;
+  }
+  console.log('result', result);
+  console.log('str', str);
 
   return result;
 };
@@ -144,12 +153,21 @@ const gruffaloCrumble = {
 
 // expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
 
+
+// used forEach from MDN
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.forEach(element => {
-    result.push(element.ingredients.slice(0,2));
+  recipe.ingredients.forEach(element => {
+    // split every word in str
+    let words = element.split(' ');
+    if (words.length > 3) {
+      // to join words like 'pure maple syrup'
+      result.push(words.slice(2).join(' '));
+      // if length is 3, will slice the last word and converts to string
+    } else result.push(words.slice(2).join());
   });
+  console.log(result);
   return result;
 };
 

@@ -79,20 +79,21 @@ For example, if the input is 'Welcome', the output will be:
 // expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
 
 const howMuchPencil = (str) => {
-  let result = [];
   // Solution code here...
+  // let result = [];
   // result.push(str);
 
-  // for (let i = 0; i <= str.length; i++) {
-  while (str.length) {
-    let newStr = str.split('');
-    result.push(newStr.slice(1).join(''));
-    str.shift();
-  }
-  console.log('result', result);
-  console.log('str', str);
+  // // for (let i = 0; i < str.length; i++) {
+  // for (let i = 0; i < str.length; i++) {
+  //   if (i === 0) result.push(str);
+  //   let newStr = str.split(''); // ['W', 'e', 'l', 'c', 'o', 'm', 'e']
+  //   result.push(newStr.slice(1).join(''));
+  //   str.shift();
+  // }
+  // console.log('result', result);
+  // console.log('str', str);
 
-  return result;
+  // return result;
 };
 
 /* ------------------------------------------------------------------------------------------------

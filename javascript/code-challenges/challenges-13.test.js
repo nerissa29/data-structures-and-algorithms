@@ -78,8 +78,26 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
+
+/*
+  const nums = ['(123) 456-7890', '(222) 222-2222'];
+
+    expect(standardizePhoneNumbers(nums)).toStrictEqual(['1234567890', '2222222222']);
+    expect(standardizePhoneNumbers([nums[0]])).toStrictEqual(['1234567890']);
+*/
+
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  let numStr = [];
+  // let splitStr = '';
+  return arr.map(element => {
+    let splitStr = element.split('');
+    splitStr.forEach(element => {
+      if (!element.includes('()')) numStr.push(element);
+      numStr.join();
+    });
+    return numStr;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -100,26 +100,6 @@ const standardizePhoneNumbers = (arr) => {
 };
 
 
-/*
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-  let numStr = '';
-  // let chara = '() -';
-  return arr.map(element => {
-    let splitStr = element.split('');
-    console.log(splitStr);
-
-    splitStr.forEach(element => {
-      if (element !== '(' || !element !== ')') numStr += element;
-      // numStr += (!element.includes(':)'));
-    });
-    console.log(numStr);
-    return numStr;
-  });
-};
-
-*/
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 

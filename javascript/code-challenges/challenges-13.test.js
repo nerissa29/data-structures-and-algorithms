@@ -31,8 +31,12 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
+// map() and charAt() from MDN
 const firstLetters = (arr) => {
   // Solution code here...
+  return arr.map(element => {
+    return element.charAt();
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------

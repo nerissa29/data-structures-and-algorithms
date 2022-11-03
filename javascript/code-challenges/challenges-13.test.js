@@ -47,8 +47,27 @@ Write a function named findHappiness that takes in an array of strings and retur
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
+
+
+/*
+    const words = ['things', 'apple (:)', ':)banana', 'missing   that thing', 'cant:)aloupe'];
+
+    expect(findHappiness(words)).toStrictEqual(['apple (:)', ':)banana', 'cant:)aloupe']);
+    expect(findHappiness([])).toStrictEqual([]);
+    expect(findHappiness(['sadness'])).toStrictEqual([]);
+    expect(findHappiness([':) yay', ':( no', '', '', '', ''])).toStrictEqual([':) yay']);
+ */
+
+
+
 const findHappiness = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach(element => {
+    if(element.includes(':)')) newArr.push(element);
+    // else return [];
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

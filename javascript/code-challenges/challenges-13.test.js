@@ -108,6 +108,7 @@ Write a function named onlyOddChars that takes in a string and returns only the 
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
+// map() and split() from MDN
 const onlyOddChars = (str) => {
   // Solution code here...
   let newStr = '';

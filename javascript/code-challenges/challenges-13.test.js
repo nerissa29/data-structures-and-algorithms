@@ -110,6 +110,12 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let newStr = '';
+  let strSplit = str.split('');
+  strSplit.map((element, index) => {
+    if (index % 2 !== 0) newStr += element;
+  });
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -88,17 +88,37 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
-  let numStr = [];
-  // let splitStr = '';
+  let newArr = arr.map(element => {
+    let substr1 = (element.substring(1, 4));
+    let substr2 = element.substring(6, 9);
+    let substr3 = element.substring(10);
+
+    return substr1 + substr2 + substr3;
+  });
+  console.log(newArr);
+  return newArr;
+};
+
+
+/*
+const standardizePhoneNumbers = (arr) => {
+  // Solution code here...
+  let numStr = '';
+  // let chara = '() -';
   return arr.map(element => {
     let splitStr = element.split('');
+    console.log(splitStr);
+
     splitStr.forEach(element => {
-      if (!element.includes('()')) numStr.push(element);
-      numStr.join();
+      if (element !== '(' || !element !== ')') numStr += element;
+      // numStr += (!element.includes(':)'));
     });
+    console.log(numStr);
     return numStr;
   });
 };
+
+*/
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5

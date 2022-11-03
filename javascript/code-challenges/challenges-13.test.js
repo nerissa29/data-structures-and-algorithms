@@ -125,8 +125,24 @@ CHALLENGE 6
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
+
+/*
+    const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
+
+    expect(allHappy(words)).toStrictEqual(false);
+    expect(allHappy(['apple (:)', ':)banana', 'cant:)aloupe'])).toStrictEqual(true);
+    expect(allHappy([])).toStrictEqual(true);
+*/
+
+
 const allHappy = (arr) => {
   // Solution code here...
+  let count = 0;
+  arr.forEach(element => {
+    if (element.includes(':)')) count++;
+  });
+  if(count === arr.length) return true;
+  else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------

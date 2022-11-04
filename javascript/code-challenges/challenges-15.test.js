@@ -36,9 +36,29 @@ Write a function named toTitleCase that takes in an array of strings and returns
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
+
 const toTitleCase = (arr) => {
   // Solution code here...
+
+  let newArr = arr.map(element => {
+    if (element[0] === element[0].toLowerCase()) return element[0].toUpperCase() + element.substring(1);
+    else return element
+  });
+  console.log(newArr);
+  return newArr;
 };
+
+
+// const toTitleCase = (arr) => {
+//   // Solution code here...
+//   let regexPattern = /^[a-z]/g;
+//   let newArr = arr.map(element => {
+//     if (element.replace(regexPattern, element[0].toUpperCase())) return element;
+//     else return element;
+//   });
+//   console.log(newArr);
+//   return newArr;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3

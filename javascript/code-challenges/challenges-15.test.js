@@ -1,5 +1,7 @@
 'use strict';
 
+const { val } = require("cheerio/lib/api/attributes");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -134,12 +136,12 @@ let starWarsData = [{
 let biggerThanLuke = (arr) => {
   // Solution code here...
   let names = [];
-  let lukeMass = arr[0].mass;
+  // let lukeMass = arr[0].mass;
 
-  let newArr = arr.forEach(element => {
-    if (element.mass > lukeMass) names.push(element.name);
+  arr.forEach(element => {
+    if (element.mass > 77) names.push(element.name);
   });
-  console.log(newArr);
+  console.log(names);
   return names.join(' - ');
 };
 
@@ -157,8 +159,26 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
+/*
+  expect(sortBy('price', [
+      { name: 'Sweatshirt', price: 45 },
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 }
+    ])).toStrictEqual([
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 },
+      { name: 'Sweatshirt', price: 45 },
+    ]);
+
+*/
+
 const sortBy = (property, arr) => {
-  // Solution code here...
+  // Sorted by price
+  let newArr = arr.sort((a, b) => {
+    return a.price - b.price || a.name - b.name; // it says OR but only need to pass both???
+  });
+  console.log(newArr);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -175,6 +195,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  if (url.includes('https://')) return true;
+  else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -196,8 +218,42 @@ Here is a sample board:
 ];
 ------------------------------------------------------------------------------------------------ */
 
+// helper functions
+// const ticTacToe = (val1) => {
+//   let rows;
+//   let col;
+//   for (let i = 0; i < val1.length; i++) {
+//     for (let j = 0; i < val1.length; j++) {
+//       if (val1[j][i] === 'X' || val1[j][i] === 'O') {
+//         rows = true;
+//         i = val1.length - 1;
+//         return rows;
+//       }
+//     }
+//   }
+
+//   for (let i = 0; i < val1.length; i++) {
+//     for (let j = 0; i < val1.length; j++) {
+//       if (val1[i][j][0] === 'X' ||val1[i][j][0] === 'O') {
+//         col = true;
+//         i = val1.length - 1;
+//         return col;
+//       }
+//     }
+//   }
+
+//   for (let i = 0; i < val1.length; i++) {
+//     for (let j = 0; i < val1.length; j++) {
+//       if (i === 0) {
+
+//       }
+//     }
+//   }
+// };
+
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------

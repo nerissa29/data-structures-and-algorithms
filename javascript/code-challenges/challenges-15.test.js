@@ -1,5 +1,7 @@
 'use strict';
 
+const { val } = require("cheerio/lib/api/attributes");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -157,14 +159,26 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
+/*
+  expect(sortBy('price', [
+      { name: 'Sweatshirt', price: 45 },
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 }
+    ])).toStrictEqual([
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 },
+      { name: 'Sweatshirt', price: 45 },
+    ]);
+
+*/
+
 const sortBy = (property, arr) => {
   // Sorted by price
-  return arr.sort((a, b) => {
-    return a.price - b.price && a.name - b.name;
+  let newArr = arr.sort((a, b) => {
+    return a.price - b.price || a.name - b.name; // it says OR but only need to pass both???
   });
-  // let newArr = arr.sort((a, b) => a.price - b.price);
-  // console.log(newArr);
-  // return newArr;
+  console.log(newArr);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -204,8 +218,42 @@ Here is a sample board:
 ];
 ------------------------------------------------------------------------------------------------ */
 
+// helper functions
+// const ticTacToe = (val1) => {
+//   let rows;
+//   let col;
+//   for (let i = 0; i < val1.length; i++) {
+//     for (let j = 0; i < val1.length; j++) {
+//       if (val1[j][i] === 'X' || val1[j][i] === 'O') {
+//         rows = true;
+//         i = val1.length - 1;
+//         return rows;
+//       }
+//     }
+//   }
+
+//   for (let i = 0; i < val1.length; i++) {
+//     for (let j = 0; i < val1.length; j++) {
+//       if (val1[i][j][0] === 'X' ||val1[i][j][0] === 'O') {
+//         col = true;
+//         i = val1.length - 1;
+//         return col;
+//       }
+//     }
+//   }
+
+//   for (let i = 0; i < val1.length; i++) {
+//     for (let j = 0; i < val1.length; j++) {
+//       if (i === 0) {
+
+//       }
+//     }
+//   }
+// };
+
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------

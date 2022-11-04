@@ -181,6 +181,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  if (url.includes('https://')) return true;
+  else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------

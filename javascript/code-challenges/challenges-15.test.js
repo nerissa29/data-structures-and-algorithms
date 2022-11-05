@@ -1,7 +1,5 @@
 'use strict';
 
-const { val } = require("cheerio/lib/api/attributes");
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -44,7 +42,7 @@ const toTitleCase = (arr) => {
 
   let newArr = arr.map(element => {
     if (element[0] === element[0].toLowerCase()) return element[0].toUpperCase() + element.substring(1);
-    else return element
+    else return element;
   });
   console.log(newArr);
   return newArr;
@@ -175,7 +173,8 @@ This data could be sorted by name or price.
 const sortBy = (property, arr) => {
   // Sorted by price
   let newArr = arr.sort((a, b) => {
-    return a.price - b.price || a.name - b.name; // it says OR but only need to pass both???
+    if (a[property] > b[property]) return 1;
+    else return -1;
   });
   console.log(newArr);
   return newArr;
@@ -222,6 +221,8 @@ Here is a sample board:
 // const ticTacToe = (val1) => {
 //   let rows;
 //   let col;
+//   let diagonal;
+
 //   for (let i = 0; i < val1.length; i++) {
 //     for (let j = 0; i < val1.length; j++) {
 //       if (val1[j][i] === 'X' || val1[j][i] === 'O') {
@@ -244,9 +245,8 @@ Here is a sample board:
 
 //   for (let i = 0; i < val1.length; i++) {
 //     for (let j = 0; i < val1.length; j++) {
-//       if (i === 0) {
-
-//       }
+//       if (val1[i][j][0] === 'X') diagonal = true;
+//       if (val1[i][j][1] === 'X')
 //     }
 //   }
 // };

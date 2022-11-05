@@ -39,8 +39,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 
 const validatePin = (pin) => {
-  // Solution code here...
-  let regex = /\d{4}/g;
+  // start of, digits, 4 long, end of string/line
+  let regexPattern = /^\d{4}$/g;
+  return regexPattern.test(pin);
 
 };
 
@@ -53,9 +54,10 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+  // non-digit, 5-10 long, end of string
+  let regexPattern = /^\D{5,10}$/g;
+  return regexPattern.test(word);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -66,6 +68,8 @@ If it does, return true. If not, return false.
 
 const hasNumber = (string) => {
   // Solution code here...
+  let regexPattern = /[a-zA-Z]+\d+/g;
+  return regexPattern.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,6 +90,9 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  let regexPattern = /^[a-zA-z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+.(com|org|net)$/g;
+  // let regexPattern = /^[a-zA-z0-9]+@[a-zA-Z0-9]+.(com|org|net)/g;
+  return regexPattern.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,6 +118,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  let regexPattern = /^(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/g;
+  return regexPattern.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------

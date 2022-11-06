@@ -54,11 +54,13 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // uses sort()
-  let sortByChildren = charArray.sort((a, b) => {
-    if (a.length === b.length) return a.house - b.house;
-    // a.children.length - b.children.length;
-  });
-  return sortByChildren;
+  // let sortChildren = charArray.sort((a, b) => {
+  //   let result = '';
+  //   if (a.children.length === b.children.length) result = a.house - b.house;
+  //   else result = a.children - b.children;
+  //   return result;
+  // });
+  // return sortChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------

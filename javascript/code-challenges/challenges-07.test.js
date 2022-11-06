@@ -80,20 +80,14 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   // Solution code here...
-  // let result = [];
-  // result.push(str);
+  let result = [];
 
-  // // for (let i = 0; i < str.length; i++) {
-  // for (let i = 0; i < str.length; i++) {
-  //   if (i === 0) result.push(str);
-  //   let newStr = str.split(''); // ['W', 'e', 'l', 'c', 'o', 'm', 'e']
-  //   result.push(newStr.slice(1).join(''));
-  //   str.shift();
-  // }
-  // console.log('result', result);
-  // console.log('str', str);
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
+  console.log(result);
+  return result;
 
-  // return result;
 };
 
 /* ------------------------------------------------------------------------------------------------

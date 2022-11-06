@@ -119,8 +119,8 @@ Return an array containing all the matches.
 // used regex101.com
 const isCapitalized = (str) => {
 // declaring a variable that holds the regex pattern
-  let regexPattern = /^[[:upper:]]/;
-  return str.match(regexPattern);
+  let regexPattern = /[A-Z][a-z]+/g;
+  return str.match(regexPattern) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------

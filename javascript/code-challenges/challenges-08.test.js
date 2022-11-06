@@ -132,9 +132,12 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 // used regex101.com
 const citiesAtoJ = (arr) => {
   // declaring a variable that holds the regex pattern
-  let regexPattern = /\w*^[A-J]\w*/g;
-  return arr.match(regexPattern);
-
+  let regexPattern = /^[A-J][a-z]+/;
+  let newArr = [];
+  arr.forEach(element => {
+    if (regexPattern.test(element)) newArr.push(element);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

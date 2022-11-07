@@ -196,14 +196,17 @@ const errands = [
 // forEach() from MDN
 const howManyTreats = (arr) => {
   // Solution code here...
-  // let quantityOfTreats = arr.forEach((element) => {
-  //   if (element.name === 'Pet store') {
-  //     Object.keys(arr).forEach((key, idx) => {
-  //       if (key.items.name === 'Treats') return key.items.quantity;
-  //     });
-  //   }
-  // });
-  // return quantityOfTreats;
+  let numOfTreats = 0;
+  // find the pet store to get quantity of treats
+  let petStore = arr.find(element => element.store === 'Pet store');
+
+  // loop through this store and return the # of treats
+  petStore.items.forEach(el => {
+    if (el.name === 'Treats') numOfTreats += el.quantity;
+  });
+
+  console.log(numOfTreats);
+  return numOfTreats;
 };
 
 

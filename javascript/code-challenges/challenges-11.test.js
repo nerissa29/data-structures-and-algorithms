@@ -28,14 +28,11 @@ Becomes:
 function transformToLis(obj){
   // Solution code here...
   // let entries = Object.entries(obj);
-  // entries.map(element => {
-  //   <li></li>
-  // })
-
-
-  // for (let keys in obj) {
-  //   return `<li>${keys}: ${obj[keys]}</li>`;
-  // }
+  // return entries.forEach(element => {
+  //   element.map(el => {
+  //     return `<li>name: ${el[0]}</li>, <li>age: ${el[1]}</li>`;
+  //   });
+  // });
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -170,16 +167,16 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
-  // let shortest = data.map((element => element.height));
+  let min = starWarsData[0].height;
+  let name = '';
 
-  // let num = Math.min(shortest);
-
-  // let data.map(element => {
-  //   if (element.height === num) return element.name;
-  // })
-
-  // console.log('shortest: ', shortest);
-  // return shortest;
+  data.forEach(element => {
+    if (+element.height < min) {
+      min = element.height;
+      name = element.name;
+    }
+  });
+  return name;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -54,11 +54,11 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // uses sort()
-  let sortByChildren = charArray.sort((a, b) => {
-    if (a.length === b.length) return a.house - b.house;
-    // a.children.length - b.children.length;
+  let sortChildren = charArray.sort((a, b) => {
+    if (a.children.length === b.children.length) return -1;
+    else if (a.children.length < b.children.length) return -1;
   });
-  return sortByChildren;
+  return sortChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,8 +119,8 @@ Return an array containing all the matches.
 // used regex101.com
 const isCapitalized = (str) => {
 // declaring a variable that holds the regex pattern
-  let regexPattern = /^[[:upper:]]/;
-  return str.match(regexPattern);
+  let regexPattern = /[A-Z][a-z]+/g;
+  return str.match(regexPattern) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,9 +132,12 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 // used regex101.com
 const citiesAtoJ = (arr) => {
   // declaring a variable that holds the regex pattern
-  let regexPattern = /\w*^[A-J]\w*/g;
-  return arr.match(regexPattern);
-
+  let regexPattern = /^[A-J][a-z]+/;
+  let newArr = [];
+  arr.forEach(element => {
+    if (regexPattern.test(element)) newArr.push(element);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

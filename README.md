@@ -24,5 +24,5 @@ To run your tests
 
 ### Table of Contents
 
-[Array Reverse](python/docs/array_reverse/README.md)
-[Array Binary Search](python/docs/array_binary_search/README.md)
+- [Array Reverse](python/docs/array_reverse/README.md)
+- [Array Binary Search](python/docs/array_binary_search/README.md)

@@ -25,3 +25,4 @@ To run your tests
 ### Table of Contents
 
 [Array_Reverse](python/docs/array_reverse/README.md)
+[Array_Binary_Search](python/docs/array_binary_search/README.md)
